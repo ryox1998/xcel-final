@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Mitr:200,300,400,500,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+.login__box {
+    font-family: 'Mitr', sans-serif;
+    background-color: #F5F5F5;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 470px;
+    width: 350px;
+    border: solid 1px rgb(190, 181, 181);
+    border-radius: 30px;
+}
+
+.login__box h1 {
+    font-weight: 300;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.login__box .row {
+    margin-top: 2em;
+}
+
+.user__input,
+.pw__input {
+    font-family: 'Mitr', sans-serif;
+    margin: 0.5em;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+    width: 65%;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding-left: 50px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: 13px;
+    background-image: url('../img/user-icon.png');
+}
+
+.user__input:focus,
+.pw__input:focus {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    outline: none;
+    opacity: 1;
+    border: 1px solid black;
+}
+
+.pw__input {
+    background-image: url('../img/pw-icon.png');
+}
+
+.btn__login {
+    font-family: 'Mitr', sans-serif;
+    opacity: 0.8;
+    font-size: 22px;
+    margin-top: 2em;
+    color: white;
+    border: solid 3px black;
+    border-radius: 15px;
+    height: 55px;
+    width: 50%;
+    background-color: black;
+}
+
+.btn__login:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+.page__load {
+    text-align: center;
+}
+
+.page__load h1 {
+    font-size: 45px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.loading__box {
+    background-color: #faf9f9;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 60px;
+    width: 70%;
+    border: solid 5px black;
+    border-radius: 5px;
+}
+
+#loading {
+    background-color: brown;
+    width: 1%;
+    height: 100%;
+    -webkit-transition: width 2.5s;
+    transition: width 2.5s;
+}

@@ -1,0 +1,42 @@
+div.dataTables_wrapper {
+	width: 97%;
+	margin: 0 auto;
+}	
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 4px 6px;
+}
+ .dataTables_filter input {
+	background-color:#f9fbbf;
+	min-width:250px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:400;
+}	
+.modal-backdrop.in {
+	opacity: 0.8;
+}
+table.dataTable thead th {
+	position: relative;
+	background-image: none !important;
+}
+ 
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+	position: absolute;
+	top: 12px;
+	right: 8px;
+	display: block;
+	font-family: FontAwesome;
+}
+div.dt-buttons{
+position:relative;
+float:right;
+}
+
+.tbx {
+	border: 0px solid #cccccc;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:16px;
+	font-weight:nomal;
+	color:#000000;
+}
