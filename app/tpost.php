@@ -11,32 +11,41 @@
     <title>Document</title>
 </head>
 <body>
-<form id='FormUpfile_c' enctype="multipart/form-data">
-									<table class="table table-user-information">
-					                    <tbody>
-					                      	<tr>
-					                        	<td class="col-sm-4">
-					                        		 File Input Upload<br>เลือกไฟล์
-					                        		<t style="color:red; font-weight:bold;">**</t>
-					                        	</td>
-					                        	<td>
-					                        		<input  type="file" id="file_plan_c" name="file_plan_c[]"  accept=".xls,.xlsx,.csv" multiple/>
-												<!-- <input type="hidden" id="file_plan_c" name="file_plan_c[]"  value=" <?php $xfile = 'kuay.xlxs'; ?> ">	 -->
-					                        	</td>
-					                      	</tr>
-					                    </tbody>
-				              		</table>
-									<div class="col-xs-12 center"><br>
-										<button class="btn btn-info" type="submit">
-											<i class="ace-icon fa fa-check bigger-110"></i>
-											Upload File
-										</button>
-									</div>
 
-									
-									<div class="col-xs-12 center"><br><br>
-										<h3 style="color:red;">**การอัพโหลดไฟล์ Excel Files ควรตั้ง Sheet ที่จะอับโหลดให้อยู่ขวามือสุด**<br>**และต้องเป็น Active Sheet เท่านั้น**</h3>
-									</div>
-								</form>
+	<form id="FormUpfile_c"  method="POST" enctype="multipart/form-data">
+		<?php  $file = file_get_contents("kuay.xlsx");?>
+		<input type="hidden" id="file_plan_c" name="file_plan_c[]" value="<? $file ;?>">	
+		<!-- <input  type="file" id="file_plan_c" name="file_plan_c[]"  accept=".xls,.xlsx,.csv" multiple/> -->
+		<button type="submit">send</button>
+</form>
 </body>
+<script>
+	
+$(document).ready(function() {
+	$('#waitingIcon_c').hide();
+	$('#FormUpfile_c').on('submit', function(e) 
+	{
+		
+		e.preventDefault();
+		$('#waitingIcon_c').show();
+		//var formData = new FormData();
+		
+		var formData = new FormData($(this)[0]);
+		$.ajax({
+            url: "upload_x.php", // our php file
+            type: 'post',
+			data: formData,
+            dataType: 'html', // we return html from our php file
+            async: true,
+            processData: false,  // tell jQuery not to process the data
+            contentType: false,   // tell jQuery not to set contentType
+            success : function(returndata) 
+			{
+				$('#waitingIcon_c').hide();
+				$('#showtest_c').html(returndata);
+            }
+        });	
+	});	
+});
+</script>
 </html>

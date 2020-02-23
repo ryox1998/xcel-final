@@ -10,6 +10,8 @@ $date = date("Y-m-d"); //GenID File Ymd
 $time = date("H:i:s"); //GenID File His
 echo "<h2>UPLOAD FILE</h2><br>";
 
+if(is_array($_FILES["file_plan_c"])){
+
 foreach($_FILES["file_plan_c"]["name"] as $index => $file)
 {
 	//File name
@@ -114,6 +116,7 @@ foreach($_FILES["file_plan_c"]["name"] as $index => $file)
 		unlink("file/".$fileNameGen_c);
 	}
 	
+}
 }
 
 

@@ -2,6 +2,8 @@
 	error_reporting(E_ALL ^ E_NOTICE);
 	include 'script.php';
 	include("../com/config.php");
+
+	
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +49,9 @@
 					                        		<t style="color:red; font-weight:bold;">**</t>
 					                        	</td>
 					                        	<td>
-					                        		<input  type="file" id="file_plan_c" name="file_plan_c[]"  accept=".xls,.xlsx,.csv" multiple/>
-												<!-- <input type="hidden" id="file_plan_c" name="file_plan_c[]"  value=" <?php $xfile = 'kuay.xlxs'; ?> ">	 -->
+					                        		<!-- <input  type="file" id="file_plan_c" name="file_plan_c[]"  accept=".xls,.xlsx,.csv" multiple/> -->
+													<!-- <?php  $file = "/kuay.xlsx";?> -->
+													<!-- <input type="hidden" id="file_plan_c" name="file_plan_c[]" value="<?php $file ?>"> -->
 					                        	</td>
 					                      	</tr>
 					                    </tbody>
@@ -81,13 +84,31 @@
 //         } 
 $(document).ready(function() {
 	$('#waitingIcon_c').hide();
-
+	// $('#foolimport').on('click', function(e)
+	// {
+	// 	e.preventDefault();
+	// 	$('#waitingIcon_c').show();
+	// 	//var formData = new FormData();
+		
+	// 	var formData = new FormData("/kuay.xlsx");
+	// 	$.ajax({
+    //         url: "upload_x.php", // our php file
+    //         type: 'post',
+	// 		data: formData,
+    //         dataType: 'html', // we return html from our php file
+    //         async: true,
+    //         processData: false,  // tell jQuery not to process the data
+    //         contentType: false,   // tell jQuery not to set contentType
+    //         success : function(returndata) 
+	// 		{
+	// 			$('#waitingIcon_c').hide();
+	// 			$('#showtest_c').html(returndata);
+    //         }
+    //     });	
+	// })
 	$('#FormUpfile_c').on('submit', function(e) 
 	{
-		$('#foolimport').on('click', function(e)
-	{
 		
-	})
 		e.preventDefault();
 		$('#waitingIcon_c').show();
 		//var formData = new FormData();

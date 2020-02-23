@@ -11,24 +11,50 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
+
 <body>
-    <div class="page__load">
+    <!-- <div class="page__load">
         <h1>Please wait while loading Data</h1>
         <div class="loading__box">
             <div id="loading"></div>
         </div>
+    </div> -->
+
+
+    <div class = "page_load">
+    <div class="progress-bar"style="--width: 20" data-label="Loading..."></div>
     </div>
     
+  </body>
+    
+
+  
 
 <script>
-    $( document ).ready(function() {
-    console.log( "ready!" );
-    document.getElementById("loading").style.width = "100%";
-    });
+    const progressBar = document.getElementsByClassName('progress-bar')[0]
+    setInterval(() => {
+    const computedStyle = getComputedStyle(progressBar)
+    const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0
+    progressBar.style.setProperty('--width', width + .1)
+    }, 5)
+
+
+    // $( document ).ready(function() {
+    // console.log( "ready!" );
+    // document.getElementById("loading").style.width = "100%";
+    // });
+
+
 </script>
 
 </body>
 </html>
+
+
+
+
+
     <?php 
         session_start();
         error_reporting(E_ALL ^ E_NOTICE);
@@ -44,8 +70,8 @@
 ?>
 <meta http-equiv="refresh" content="3;url=upload.php" />
 
-<script>
+<!-- <script>
  $(document).ready(function () {
      document.getElementById("mySidenav").style.width = "100%";
  });
-</script>
+</script> -->
